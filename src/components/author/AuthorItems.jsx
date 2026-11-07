@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
+import Skeleton from "../UI/Skeleton";
 
-const AuthorItems = () => {
-  return (
+const AuthorItems = ({ authorData, authorImage, loading }) => {
+
+   return (
     <div className="de_tab_content">
       <div className="tab-1">
         <div className="row">
