@@ -6,6 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import ReactOwlCarousel from "react-owl-carousel";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import AOS from 'aos';
 
 const NewItems = ({ loading: propLoading = false }) => {
   const [data, setData] = useState([]);
@@ -58,10 +59,17 @@ const NewItems = ({ loading: propLoading = false }) => {
   return <div className="de_countdown">{timeLeft}</div>;
 }
 
+  AOS.init({
+    useClassNames: true,
+    initClassName: false,
+    animatedClassName: 'animated',
+  });
+
   return (
     <section id="section-items" className="no-bottom">
       <div className="container">
         <div className="row">
+          <div data-aos="fade-in"></div>
           <div className="col-lg-12">
             <div className="text-center">
               <h2>New Items</h2>

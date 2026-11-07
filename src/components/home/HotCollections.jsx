@@ -6,6 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import ReactOwlCarousel from "react-owl-carousel";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import AOS from 'aos';
 
 const HotCollections = ({ loading: propLoading = false }) => {
   const [data, setData] = useState([]);
@@ -29,17 +30,24 @@ const HotCollections = ({ loading: propLoading = false }) => {
 
   const skeletonItems = Array.from({ length: 4 });
 
+  AOS.init({
+  useClassNames: true,
+  initClassName: false,
+  animatedClassName: 'animated',
+  });
+
   return (
     <section id="section-collections" className="no-bottom">
       <div className="container">
         <div className="row">
+          <div data-aos="fade-in">
           <div className="col-lg-12">
             <div className="text-center">
               <h2>Hot Collections</h2>
               <div className="small-border bg-color-2"></div>
+              </div>
             </div>
           </div>
-
           {propLoading || isLoading ? (
             skeletonItems.map((_, index) => (
               <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>

@@ -3,6 +3,7 @@ import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import SubHeader from "../images/subheader.jpg";
 import ExploreItems from "../components/explore/ExploreItems";
+import AOS from 'aos';
 
 const Explore = ({ loading: propLoading = false }) => {
   const [, setData] = useState([]);
@@ -30,6 +31,12 @@ const Explore = ({ loading: propLoading = false }) => {
 
   const skeletonItems = Array.from({ length: 4 });
 
+  AOS.init({
+    useClassNames: true,
+    initClassName: false,
+    animatedClassName: 'animated',
+    });
+
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -39,6 +46,7 @@ const Explore = ({ loading: propLoading = false }) => {
             <div className="center-y relative text center" key={index}>
               <div className="container">
                 <div className="row">
+                  <div data-aos="fade-in">
                   <div className="coll-md-12 text-center">
                     <Skeleton width="100%" height="180px" borderRadius="12px" />
                   </div>
@@ -47,6 +55,7 @@ const Explore = ({ loading: propLoading = false }) => {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           ))
         ) : (
