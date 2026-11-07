@@ -107,7 +107,7 @@ const ExploreItems = ({ loading: propLoading = false }) => {
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
-                    to={`/author/${authorId}`}
+                    to={`/author/${item.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                   >
