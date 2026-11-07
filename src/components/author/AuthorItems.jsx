@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
 
 const AuthorItems = ({ authorData, authorImage, loading }) => {
-  const { authorId } = useParams();
 
    return (
     <div className="de_tab_content">
